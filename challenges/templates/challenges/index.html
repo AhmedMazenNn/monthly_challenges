@@ -1,0 +1,22 @@
+{%extends "layout.html"%}
+{%load static%} 
+
+{%block css_files%}
+<link rel="stylesheet" href="{%static "challenges/main.css"%}">
+<link rel="stylesheet" href="{%static "challenges/includes/header.css"%}">
+{%endblock%}
+
+{%block content%}
+
+    {%block page_title%}
+    
+    {%endblock%}
+
+    {%include "challenges/includes/header.html"%}
+    <ul>
+      {%for month in months%}
+        <li><a href="{%url 'monthly_challenge' month %}">{{month|title}}</a></li>
+      {%endfor%}
+    </ul>
+    {%endblock%}
+
